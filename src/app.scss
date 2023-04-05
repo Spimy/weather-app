@@ -47,3 +47,16 @@ body {
 		font-size: $BASE_FONT_SIZE * pow($BASE_FONT_SIZE, 6 - $i) * pow($FONT_SCALE, 6 - $i) * 1px;
 	}
 }
+
+a {
+	color: inherit;
+	font-weight: bold;
+	text-decoration: none;
+
+	&[rel='external'] {
+		background-color: var(--primary-clr);
+		padding: 0.2em 0.5em;
+		margin: 0.1em;
+		border-radius: 1em;
+	}
+}

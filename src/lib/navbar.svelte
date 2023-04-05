@@ -28,9 +28,6 @@
 			gap: 2em;
 
 			a {
-				color: inherit;
-				font-weight: bold;
-				text-decoration: none;
 				border-radius: 0.5em;
 				padding: 0.7em 1em;
 				transition: background-color 0.3s ease, color 0.3s ease;
