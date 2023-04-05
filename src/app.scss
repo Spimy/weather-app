@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
 
+$BASE_FONT_SIZE: 15;
+$FONT_SCALE: 0.09;
+
+@function pow($number, $exponent) {
+	$value: 1;
+
+	@if $exponent > 0 {
+		@for $i from 1 through $exponent {
+			$value: $value * $number;
+		}
+	}
+
+	@return $value;
+}
+
 *,
 ::before,
 ::after {
@@ -10,9 +25,25 @@
 }
 
 body {
-	padding: 2rem;
+	--primary-clr: #181e6e;
+	--secondary-clr: #4e39ba;
 
-	@media screen and (min-width: 45em) {
-		padding: 3rem 6rem;
+	height: 1vh;
+	height: 1svh;
+	font-size: $BASE_FONT_SIZE * 1px;
+	padding: 3em;
+	background: linear-gradient(45deg, #4e39ba, #181e6e);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	color: #fff;
+
+	@media screen and (min-width: 50em) {
+		padding: 3em 6em;
+	}
+}
+
+@for $i from 1 through 6 {
+	h#{$i} {
+		font-size: $BASE_FONT_SIZE * pow($BASE_FONT_SIZE, 6 - $i) * pow($FONT_SCALE, 6 - $i) * 1px;
 	}
 }
