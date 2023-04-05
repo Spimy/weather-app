@@ -18,27 +18,37 @@
 
 <style lang="scss">
 	header {
-		display: flex;
-		justify-content: space-between;
+		text-align: center;
 
 		ul {
+			display: flex;
+			justify-content: space-evenly;
 			list-style: none;
+			margin-block: 2em;
+			gap: 2em;
 
-			li {
-				display: inline;
-				padding: 1em;
+			a {
+				color: inherit;
+				font-weight: bold;
+				text-decoration: none;
+				border-radius: 0.5em;
+				padding: 0.7em 1em;
+				transition: background-color 0.3s ease, color 0.3s ease;
 
-				a {
-					color: black;
-					text-decoration: none;
+				&.active {
+					background-color: var(--primary-clr);
+				}
 
-					&.active,
-					&:hover {
-						color: red;
-						text-decoration: underline;
-					}
+				&:hover:not(.active) {
+					background-color: var(--secondary-clr);
 				}
 			}
+		}
+
+		@media screen and (min-width: 50em) {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
 		}
 	}
 </style>
