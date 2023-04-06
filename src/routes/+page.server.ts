@@ -20,7 +20,7 @@ export const load: PageServerLoad<Data> = async ({ getClientAddress, fetch }) =>
 		`https://ipapi.co/${clientIp}/json`
 	).then((response) => response.json());
 
-	if (isRateLimited(location)) return { location: '' };
+	if (isRateLimited(location)) return;
 
 	return { location: `${location.city}, ${location.country_code}` };
 };
