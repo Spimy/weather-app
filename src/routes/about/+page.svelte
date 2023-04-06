@@ -30,7 +30,7 @@
 		<br />
 		I would like to also extend my thanks to
 		<a rel="external" href="https://rapidapi.com/wirefreethought/api/geodb-cities" target="_blank"
-			>GeoDB Cities'</a
+			>GeoDB Cities</a
 		> for its API which allowed me to create the autocomplete functionality of the search bar 👍.
 	</p>
 </section>
