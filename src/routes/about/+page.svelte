@@ -7,6 +7,10 @@
 		<br />
 		At the same time, I wanted to give SvelteKit a try. Building a weather app is one of the many beginner
 		projects so I thought, why not? That's how this page was created. Nothing fancy ✨.
+		<br />
+		<br />
+		P.S. This may look a bit weird on a device with a larger screen because this was made with mobile
+		in mind.
 	</p>
 </section>
 <section>
