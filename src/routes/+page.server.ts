@@ -12,7 +12,9 @@ interface Data {}
 
 export const load: PageServerLoad<Data> = async ({ getClientAddress, fetch }) => {
 	const clientIp = getClientAddress();
+
 	if (!clientIp) return;
+	if (clientIp.includes('127.0.0.1')) return;
 
 	const location: LocationData | LocationRateLimited = await fetch(
 		`https://ipapi.co/${clientIp}/json`
