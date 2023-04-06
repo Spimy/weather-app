@@ -12,6 +12,8 @@ interface Data {}
 
 export const load: PageServerLoad<Data> = async ({ getClientAddress, fetch }) => {
 	const clientIp = getClientAddress();
+	if (!clientIp) return;
+
 	const location: LocationData | LocationRateLimited = await fetch(
 		`https://ipapi.co/${clientIp}/json`
 	).then((response) => response.json());
