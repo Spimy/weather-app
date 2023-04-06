@@ -41,7 +41,9 @@
 		value={data.location ?? ''}
 		on:keyup={fetchCities}
 	/>
-	<button type="submit"><Icon icon="ion:paper-plane" style="vertical-align: middle;" /></button>
+	<button type="submit" aria-label="Submit"
+		><Icon icon="ion:paper-plane" style="vertical-align: middle;" /></button
+	>
 
 	<div class="results">
 		{#if cities.length > 0}
