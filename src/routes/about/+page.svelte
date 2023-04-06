@@ -30,9 +30,3 @@
 		> for its API which allowed me to create the autocomplete functionality of the search bar 👍.
 	</p>
 </section>
-
-<style lang="scss">
-	section {
-		margin: 2em 0;
-	}
-</style>
