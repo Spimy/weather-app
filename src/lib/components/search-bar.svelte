@@ -38,7 +38,7 @@
 		id="location"
 		name="location"
 		placeholder="Location"
-		value={data.location}
+		value={data.location ?? ''}
 		on:keyup={fetchCities}
 	/>
 	<button type="submit"><Icon icon="ion:paper-plane" style="vertical-align: middle;" /></button>
