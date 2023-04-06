@@ -53,7 +53,7 @@
 
 <style lang="scss">
 	section {
-		margin-block: 2em;
+		max-width: unset;
 	}
 
 	.weather-display {
