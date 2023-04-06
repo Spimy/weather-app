@@ -10,6 +10,8 @@
 	let timer: number;
 
 	const fetchCities = async (event: KeyboardEvent) => {
+		if (event.key === 'Enter') return;
+
 		cities = [];
 		showLoading = true;
 
