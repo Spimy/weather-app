@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Navbar from '$lib/navbar.svelte';
+	import Navbar from '$lib/components/navbar.svelte';
 	import '../app.scss';
 
 	const currentYear = new Date().getFullYear();
@@ -7,6 +7,7 @@
 
 <main>
 	<Navbar />
+
 	<slot />
 
 	<footer>
