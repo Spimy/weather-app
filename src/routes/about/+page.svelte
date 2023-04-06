@@ -20,12 +20,13 @@
 <section>
 	<h2>Attributions</h2>
 	<p>
-		This web application was made possible thanks to<a
+		This web application was made possible thanks to <a
 			rel="external"
 			href="https://openweathermap.org/"
 			target="_blank">OpenWeather's</a
-		>amazing API. Without it, there would be no real way to get access to weather data. If you are
-		creating your own weather app, I recommend checking them out 😃.
+		>
+		amazing API. Without it, there would be no real way to get access to weather data. If you are creating
+		your own weather app, I recommend checking them out 😃.
 		<br />
 		<br />
 		I would like to also extend my thanks to
