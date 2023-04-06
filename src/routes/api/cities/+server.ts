@@ -15,7 +15,5 @@ export const GET: RequestHandler = async ({ fetch, url }) => {
 		headers: CityAPI.headers
 	}).then((response) => response.json());
 
-	console.log(cityData);
-
 	return new Response(JSON.stringify(cityData.data));
 };
