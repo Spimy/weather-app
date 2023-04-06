@@ -10,8 +10,11 @@
 	let timer: number;
 
 	const fetchCities = async (event: KeyboardEvent) => {
-		clearTimeout(timer);
+		cities = [];
 		showLoading = true;
+
+		clearTimeout(timer);
+
 		timer = setTimeout(async () => {
 			const data: Datum[] = await fetch(
 				`/api/cities?query=${(event.target as HTMLInputElement).value}`
@@ -41,7 +44,7 @@
 	<div class="results">
 		{#if cities.length > 0}
 			{#each cities as city}
-				<p on:click={fillInput}>{city.city}, {city.countryCode}</p>
+				<button on:click={fillInput}>{city.city}, {city.countryCode}</button>
 			{/each}
 		{:else if showLoading}
 			<p>Loading...</p>
@@ -99,12 +102,18 @@
 		margin-block: 1em;
 		background-color: var(--primary-clr);
 
+		button,
 		p {
 			border-radius: inherit;
+			font-size: 1rem;
 			padding: 1em;
+			width: 100%;
+			text-align: left;
+			outline: none;
 			cursor: pointer;
 
-			&:hover {
+			&:hover,
+			&:focus {
 				background-color: var(--secondary-clr);
 			}
 		}
