@@ -15,7 +15,6 @@
 
 <section>
 	<form method="POST" action="?/getWeather" use:enhance={clearForm}>
-		<label for="location">Location</label>
 		<SearchBar {data} />
 	</form>
 </section>
