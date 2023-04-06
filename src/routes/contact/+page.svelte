@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Weather - Contact</title>
+</svelte:head>
+
 <section>
 	<h2>Contact</h2>
 	<p>

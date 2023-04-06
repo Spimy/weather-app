@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Weather - About</title>
+</svelte:head>
+
 <section>
 	<h2>Purpose</h2>
 	<p>

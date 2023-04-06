@@ -13,6 +13,10 @@
 	};
 </script>
 
+<svelte:head>
+	<title>Weather - Home</title>
+</svelte:head>
+
 <section>
 	<form method="POST" action="?/getWeather" use:enhance={clearForm}>
 		<SearchBar {data} />
