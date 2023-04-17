@@ -52,7 +52,15 @@
 </svelte:head>
 
 <section>
-	<form method="POST" action="?/getWeather" use:enhance>
+	<form
+		method="POST"
+		action="?/getWeather"
+		use:enhance={() => {
+			return async ({ update }) => {
+				await update({ reset: false });
+			};
+		}}
+	>
 		<SearchBar {data} />
 	</form>
 </section>
