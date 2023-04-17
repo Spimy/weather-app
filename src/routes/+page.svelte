@@ -5,12 +5,6 @@
 
 	export let data: PageData;
 	export let form: ActionData;
-
-	const clearForm: SubmitFunction = () => {
-		return async ({ update }) => {
-			await update({ reset: true });
-		};
-	};
 </script>
 
 <svelte:head>
@@ -18,7 +12,7 @@
 </svelte:head>
 
 <section>
-	<form method="POST" action="?/getWeather" use:enhance={clearForm}>
+	<form method="POST" action="?/getWeather" use:enhance>
 		<SearchBar {data} />
 	</form>
 </section>
