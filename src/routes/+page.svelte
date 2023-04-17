@@ -5,6 +5,46 @@
 
 	export let data: PageData;
 	export let form: ActionData;
+
+	// Defaults to Kelvin
+	$: temperature = form?.weatherData?.main.temp;
+	let unit = 'K';
+	const ABSOLUTE_ZERO = 273.15; // 0 degree celsius
+
+	const convertTemperature = (event: Event) => {
+		const target = event.target as HTMLInputElement;
+		if (!temperature) return;
+
+		switch (target.value) {
+			case 'K': {
+				temperature =
+					unit === '°C'
+						? celsiusToKelvin(temperature)
+						: celsiusToKelvin(fahrenheitToCelsius(temperature));
+				break;
+			}
+			case '°C': {
+				temperature =
+					unit === 'K' ? kelvinToCelsius(temperature) : fahrenheitToCelsius(temperature);
+				break;
+			}
+			case '°F': {
+				temperature =
+					unit === 'K'
+						? celsiusToFahrenheit(kelvinToCelsius(temperature))
+						: celsiusToFahrenheit(temperature);
+				break;
+			}
+		}
+
+		unit = target.value;
+		temperature = +temperature.toFixed(2);
+	};
+
+	const fahrenheitToCelsius = (temperature: number) => (temperature - 32) / 1.8;
+	const celsiusToFahrenheit = (temperature: number) => temperature * 1.8 + 32;
+	const celsiusToKelvin = (temperature: number) => temperature + ABSOLUTE_ZERO;
+	const kelvinToCelsius = (temperature: number) => temperature - ABSOLUTE_ZERO;
 </script>
 
 <svelte:head>
@@ -31,7 +71,17 @@
 				<p>
 					<span>({form.weatherData.weather[0].description})</span>
 					<br />
-					Temperature: {form.weatherData.main.temp}K
+					Temperature: {temperature}
+					<select
+						on:change={(event) => convertTemperature(event)}
+						name="units"
+						id="units"
+						class="unit-selector"
+					>
+						<option value="K">K</option>
+						<option value="&#176C">&#176C</option>
+						<option value="&#176F">&#176F</option>
+					</select>
 					<br />
 					Humidity: {form.weatherData.main.humidity}%
 					<br />
@@ -99,6 +149,19 @@
 				img {
 					width: 20em;
 				}
+			}
+		}
+
+		.unit-selector {
+			font-weight: bold;
+			border: none;
+			border-radius: 0.3em;
+			background-color: var(--secondary-clr);
+			color: white;
+			padding: 0.3em;
+
+			option {
+				background-color: var(--primary-clr);
 			}
 		}
 	}
