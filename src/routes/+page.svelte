@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { enhance, type SubmitFunction } from '$app/forms';
+	import { enhance } from '$app/forms';
 	import type { ActionData, PageData } from './$types.js';
 	import SearchBar from '$lib/components/search-bar.svelte';
 
