@@ -8,9 +8,7 @@ import {
 import type { WeatherData } from '$lib/types/weather-data';
 import * as WeatherAPI from '$lib/api/weather.api';
 
-interface Data {}
-
-export const load: PageServerLoad<Data> = async ({ getClientAddress, fetch }) => {
+export const load: PageServerLoad = async ({ getClientAddress, fetch }) => {
 	const clientIp = getClientAddress();
 
 	if (!clientIp) return;
