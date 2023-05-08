@@ -13,6 +13,9 @@
 		projects so I thought, why not? That's how this page was created. Nothing fancy ✨.
 		<br />
 		<br />
+  The basic, initial, features were all added in one day. Any additional features or changes may be added at a later day. So, while technically this web application was done in a day, I do make changes to it every once in a while.
+  	<br />
+		<br />
 		P.S. This may look a bit weird on a device with a larger screen because this was made with mobile
 		in mind.
 	</p>
